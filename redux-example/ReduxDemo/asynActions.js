@@ -1,6 +1,6 @@
 const redux = require('redux');
 const thunk = require('redux-thunk');
-const configureStore =  require('@reduxjs/toolkit')
+const {configureStore} =  require('@reduxjs/toolkit')
 //import { configureStore } from '@reduxjs/toolkit'
 const createStore = redux.createStore;
 const combineReducers = redux.combineReducers;
@@ -72,7 +72,7 @@ const fetchUsers = ()=>{
         dispatch(fetchUsersRequest());
         try{
         const response = await axios.get('http://jsonplaceholder.typicode.com/users');
-        const users = response.map(users => users.id);
+        const users = response.data.map(users => users.id);
         dispatch(fetchUsersSuccess(users))
         }catch(e){
             dispatch(fetchUsersfailure(e))
@@ -85,11 +85,19 @@ const rootReducer = combineReducers({
         usersList : reducer,
 });
 
-const store = createStore(rootReducer, applyMiddleware(thunk));
+const serviceApi = "https://localhost:5000/";
+const store = configureStore({
+    reducer: rootReducer,
+    middleware: getDefaultMiddleware =>
+      getDefaultMiddleware({
+        thunk: {
+          extraArgument: { serviceApi }
+        }
+      })
+  })
 
-store.dispatch(fetchUsers());
-console.log('Initial state ',store.getState())
-const unsubscribe = store.subscribe(()=>{
+
+store.subscribe(()=>{
     console.log('Updated state ',store.getState());
 });
-
+store.dispatch(fetchUsers());   
