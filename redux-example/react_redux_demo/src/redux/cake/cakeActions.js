@@ -5,4 +5,4 @@ export const buyCake=()=>{
         type : BUY_CAKE,
         payload : 1
     }
-}
+};

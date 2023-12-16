@@ -14,6 +14,6 @@ const cakeReducer =(state = initalState, action)=>{
             ...state
         }
     }
-}
+};
 
 export default cakeReducer
