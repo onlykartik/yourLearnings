@@ -10,13 +10,13 @@ function icecreamContainer(props){
     )
 }
 
-const mapStateToProps = (state)=>{
+const mapStateToProps = (state, ownProps)=>{
     return {
         numberOfIceCreams: state.iceCream.numberOfIceCreams
     };
 } 
 
-const mapDispatchToProps = (dispatch)=>{
+const mapDispatchToProps = (dispatch, ownProps)=>{
    return{
     buyIcecream : ()=> dispatch(buy_icecream())
    } 

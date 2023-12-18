@@ -4,10 +4,12 @@ import {configureStore } from '@reduxjs/toolkit';
 import logger from 'redux-logger';
 import {thunk} from 'redux-thunk';
 import iceCreamReducer from "./iceCream/iceCreamReducer"
+import userReducer from "./asynUser/userReducer";
 
 const rootReducer = combineReducers({
     cake : cakeReducer,
-    iceCream : iceCreamReducer
+    iceCream : iceCreamReducer,
+    user : userReducer
 })
 
 console.log("store js has read")
