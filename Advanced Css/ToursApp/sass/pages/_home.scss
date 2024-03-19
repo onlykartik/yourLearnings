@@ -6,3 +6,24 @@
 
     // clip-path : polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 }
+
+.section-fetures{
+    background-color: $color-grey-light-1;
+    background-image: linear-gradient($color-primary-light, $color-primary-dark), url("../img/hero.jpg");
+    padding : 30rem 0;
+    clip-path: polygon(0 20%, 100% 0, 100% 80%, 0 100% );
+    margin-top: -20%;
+}
+
+.section-tours{
+    background-color: $color-grey-light-1;
+    padding : 25rem 0 10rem 0;
+    margin-top: -20%;
+}
+
+.section-stories{
+    margin-top: -10%;
+    background-color: $color-grey-light-1;
+    padding : 15rem 0;
+    
+}

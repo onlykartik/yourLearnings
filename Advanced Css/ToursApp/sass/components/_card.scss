@@ -1,0 +1,138 @@
+
+// background colors for cards
+$color-secondary-light : #ffb900;
+$color-secondary-dark : #ff7730;
+
+
+.card{
+    // Functionaly
+    position: relative;
+    height: 60rem;
+    
+
+    &__side{
+        height: 60rem;
+        position: absolute;
+        top : 0;
+        left: 0;
+        transition: 1s all;
+        width: 100%;
+        // The backface-visibility property defines whether or not the back face of an element should be visible when facing the user.
+        backface-visibility: hidden;
+        box-shadow: 0 1.5rem 4rem rgba(black,0.35);
+
+        &--font{
+            
+            
+        }
+        &--back{
+        
+            transform: rotateY(180deg);
+            &-1{
+                background-image : linear-gradient(to right bottom, $color-secondary-light,$color-secondary-dark);
+            }   
+            &-2{
+                background-image : linear-gradient(to right bottom, rgb(85, 197, 122),rgb(40, 180, 133));
+            }   
+            &-3{
+                background-image : linear-gradient(to right bottom, #2998ff,#5643fa);
+            }   
+        }
+    }
+
+    &:hover &__side--font{
+        transform: rotateY(-180deg);
+    }
+    &:hover &__side--back{
+        transform: rotateY(0deg);
+    }
+
+    // Font side styling
+    &__picture{
+        background-size: cover;
+        height: 60%;
+        clip-path:  polygon(0 0 , 100% 0 , 100% 80%, 0 100%);
+        
+        &-1{
+            background-image: url(../img/nat-5.jpg);
+        }
+
+        &-2{
+            background-image: url(../img/nat-6.jpg);
+        }
+        
+        &-3{
+            background-image: url(../img/nat-7.jpg);
+        }
+    }
+
+    &__heading{
+        font-size: 2.8rem;
+        font-weight: 100;
+        text-align: right;
+        padding: 4rem;
+        text-transform: uppercase;
+        color: white;
+        position: absolute;
+        top:12rem;
+        right:2rem;
+    }
+
+    &__haeding-span{
+        
+        &--1{
+            background-image: linear-gradient(to right bottom, rgba($color-secondary-light, 0.5), rgba($color-secondary-dark, 0.5) );
+        }
+        &--2{
+            background-image: linear-gradient(to right bottom, rgba(85, 197, 122, 0.5), rgba(40, 180, 133, 0.5) );
+        }
+        &--3{
+            background-image: linear-gradient(to right bottom, rgba(#2998ff, 0.5), rgba(#5643fa, 0.5) );
+        }
+    }
+
+    &__detailes{
+        ul{
+            
+            list-style: none;
+            margin: auto 10% ;
+            
+            li{
+                text-align: center;
+                font-size: 1.5rem;
+                padding: 1rem; 
+                
+                &:not(:last-child){
+                    border-bottom: 1px solid rgba(0, 0, 0, 0.053);
+                }
+                
+            }
+        }
+    }
+
+    // BACK side
+    &_cta{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 70%;
+        text-align: center;
+        
+    }
+    &__price-box{
+        text-align: center;
+        color:white;
+        margin-bottom: 8rem;
+    }
+    &__price-only{
+        font-size: 1.4rem;
+        text-transform: uppercase;
+        
+
+    }
+    &__price-value{
+        font-size: 6rem;
+        font-weight: 100    ;
+    }
+}

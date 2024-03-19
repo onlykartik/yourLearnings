@@ -1,0 +1,56 @@
+.story{
+    width: 75%;
+    margin: 0 auto;
+    margin-bottom: 5rem;
+    background-color: white;
+    padding : 6rem; 
+    padding-left: 10rem;
+    clip-path: polygon(5% 0, 100% 0, 95% 100%, 0% 100%);
+    font-size: 1.6rem;
+    box-shadow: 0 1.5rem 10rem rgba(8, 5, 5, 0.15);
+    transition: all 1s;
+
+    
+    &__shape{
+        float: left;
+        width: 15rem;
+        height: 15rem;
+        // This allows content to flow around the shape
+        shape-outside: circle(50% at 50% 50%);
+        clip-path: circle(50% at 50% 50%);
+        border: 1px solid black;
+        // not working
+        //transform: translateY(-3rem);
+        position: relative;
+
+    }
+
+    &__image{
+        height: 100%;
+        transform: translate(-4rem) scale(1.4);
+        
+    }
+    &__caption{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        text-transform: uppercase;
+        color: white;
+        font-size: 1.7rem;
+        text-align: center;
+        opacity: 0;
+        backface-visibility: hidden;        
+
+        
+    }
+    // !VERRY VERRY import 
+    &:hover &__image{
+        filter: blur(3px) brightness(70%);
+    }
+
+    &:hover &__caption{
+        opacity: 1;
+    }
+    
+}
