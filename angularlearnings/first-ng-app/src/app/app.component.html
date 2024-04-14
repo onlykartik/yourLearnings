@@ -1,0 +1,19 @@
+<app-header title = "Home O" user = "abbak"></app-header>
+<app-user-profile (myEvent)="recivedData($event)"></app-user-profile>
+<app-pipes-example></app-pipes-example>
+
+<!-- 
+
+WE CAN USE for loop for in the parent to send @Input 's to child component 
+Example:
+
+    pages = 
+    [
+    {title = "home", user="abbake"},
+    {title = "dashboard", user="somu"},
+    {title = "setting", user="ravi"}
+    ]
+
+<app-header *ngFor="let page of pages" [title] = "page.title" [user] = "page.user"></app-header>
+
+-->

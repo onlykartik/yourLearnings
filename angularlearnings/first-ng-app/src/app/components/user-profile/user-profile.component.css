@@ -1,0 +1,22 @@
+.user_infro{
+    margin: 10px;
+    border: 2px solid green;
+}
+
+.user_infro p{
+    padding: 10px 10px;
+}
+
+h2{
+    margin: 20px  ;
+    color: tomato;
+}
+
+.users{
+    padding: 10px;
+}
+.users .user{
+    border: 1px solid black;
+    margin: 10px;
+    padding: 10px;
+}

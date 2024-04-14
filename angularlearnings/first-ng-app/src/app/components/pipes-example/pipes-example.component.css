@@ -1,0 +1,14 @@
+.users__info{
+    margin-top: 40px;
+}
+
+.users__info .user span{
+    margin: 15px;
+}
+
+.users__info .user{
+    border: 1px solid tomato;
+    margin: 5px;
+    width: 600px;
+    padding: 30px;
+}

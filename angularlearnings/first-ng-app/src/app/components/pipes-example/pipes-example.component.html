@@ -1,0 +1,21 @@
+
+<div class="users__info">
+    @for (user of listOfUsers; track $index) {
+        <div class="user">
+            <span> {{user.name | titlecase}} </span> 
+            <span> {{user.mobileNumber | countryCode:user.country}} </span>
+            <span> {{user.country}} </span>
+            
+            <select name="countries" id={{user.name}} (change)="onChangeCountryChangeCode($event)">
+                @for (country of listOfCountries; track $index) {
+                    @if (country==user.country) {
+                        <option  value={{country}} selected >{{country}}</option>
+                    }@else {
+                        <option  value={{country}} >{{country}}</option>
+                    }
+                }
+            </select>
+            
+        </div>
+    }
+</div>

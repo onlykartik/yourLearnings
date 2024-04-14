@@ -1,0 +1,77 @@
+<div #destoryExample class="user-profile">
+
+<h2>String interpolation</h2>
+<p>Name : {{name}} Status : {{status}} Salary : {{salary}}</p>
+
+<h2>2 way binding</h2>
+
+<input class="input" type="text" [placeholder]="marriedStatus" (input)="onInputMarried($event)">
+<input class="input" type="text" [placeholder]="girlFiendStatus" 
+(focus)="onInputFocused($event)" 
+(blur)="onInputBlurred($event)"
+(input)="onInputGF($event)"
+>
+
+<div class="info">
+<strong> Wife Name :</strong> {{marriedStatus}}
+<strong> GirlFrienn Name :</strong> {{girlFiendStatus}}
+</div>
+
+
+<h2>Property binding</h2>
+<button class="input" type="submit" [disabled]="isBtnDisable">submit </button>
+
+
+<!-- THis will create user.length divs in the DOM -->
+
+<h2>THis will create user.length divs in the DOM</h2>
+
+<div class="users_directive">
+    <div class="user_infro" *ngFor="let user of users; index as i">
+        
+        <ng-container *ngIf="user.salary > 10000; else elseBlock">
+            <div class="user">
+                <p>user name : {{user.name}}</p>
+                <p>user salary : {{user.salary}}</p>
+                <p>user married status : {{user.marriedStatus}}</p>
+                <p>user girlfriend status : {{user.girlFriendStatus}}</p>
+                <input type="submit" [disabled]="user.isBtnDisable">
+            </div>
+        </ng-container>
+
+        <ng-template #elseBlock>
+            <div class="user" style="background-color: blanchedalmond;">
+                <p>user is hidden due to his/her salary is too less to show up</p>
+            </div>
+        </ng-template>
+    </div>
+</div>
+
+
+<h2>at for loop</h2>
+<div class="users">
+    @for (user of users; track $index) {
+        @if (user.salary>10000) {
+        <div class="user">
+            <!-- Custom pipe -->
+            <p appShadow >user name : {{user.name | uppercase}}</p> 
+            <p>user salary : {{user.salary | currency:"ILS"}}</p>
+            <p>user married status : {{user.marriedStatus}}</p>
+            <p>user girlfriend status : {{user.girlFriendStatus}}</p>
+            <input type="submit" [disabled]="user.isBtnDisable">
+        </div>
+        }@else {
+        <div class="user">
+            <p style="background-color: blanchedalmond;"> user is hidden due to his/her salary is to less to show up</p>
+        </div>
+        }
+    }
+
+</div>
+
+
+<h2>at Output </h2>
+
+<button #send (click)="sendData()"> Pass data to parent </button>
+
+</div>

@@ -1,8 +1,0 @@
-
-<!-- add a btn which can only be clicked, if username is ! emply -->
-<section id="assignment__2">
-    <h2>Assignment task</h2>
-    <input type="text" [(ngModel)]="username"  (ngModelChange)="onUsernameChange($event) ">
-    <p>{{username}}</p>
-    <button [disabled]="buttonDisability" (click)="onBtnClick()"> Rest User Name</button>
-</section>

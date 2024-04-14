@@ -1,0 +1,13 @@
+<nav>
+    <ul>
+        <li> <h1>{{title}}  <span>{{userName}}</span> </h1> </li>
+        @if (login) {
+            <li (click)="setInOutstatus()" > <a href="#"> logout</a>  </li>
+        }@else {
+            <li (click)="setInOutstatus()" > <a href="#"> login</a>  </li>
+        }
+        <li>Notification</li>
+    </ul>
+</nav>
+
+
