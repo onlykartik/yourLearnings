@@ -1,0 +1,20 @@
+<form class="container" #registerForm="ngForm">
+    <h2>Please Signin</h2>
+    <input type="email" placeholder="enter email" required  pattern="\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b" 
+    ngModel #email="ngModel" name="email"
+    >
+    <h5  class="error"  [hidden]="email.valid || email.untouched"> Enter correct email</h5>
+    <div class="pwd_container">
+        <input #toggle type="password" placeholder="password" 
+        required minlength="6" ngModel #password="ngModel" name="password"
+        > 
+        <input  type="checkbox"> visibility 
+    </div>
+    <h5 class="error" [hidden]="password.valid || password.untouched"> Enter correct password</h5>
+    
+    <input class="submit" [disabled]="registerForm.invalid" (click)="register(registerForm)" type="submit">
+    <input class="reset" type="reset">
+
+</form>
+
+<!--  pattern="/^[a-zA-Z0-9. _%+-]+@[a-zA-Z0-9. -]+\\." -->

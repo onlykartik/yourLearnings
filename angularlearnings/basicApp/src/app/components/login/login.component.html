@@ -1,0 +1,16 @@
+<form class="container" [formGroup] = "loginForm">
+    <h2>Login</h2>
+    <input type="email" placeholder="enter email" [formControl]="email">
+    <h5  class="error"   [hidden]="email.valid || email.untouched"> Enter correct email</h5>
+    
+
+    <div class="password">
+        <input #toggle type="password" placeholder="password" [formControl]="password"> 
+        <input  type="checkbox" (change)="onShowPassword($event)"> visibility 
+    </div>
+    <h5 class="error" [hidden]="password.valid || password.untouched"> Enter correct password</h5>
+    
+    <input class="submit" type="submit" [disabled]="loginForm.invalid" (click)="login()">
+    <input class="reset" type="reset" (click)="login()">
+
+</form>

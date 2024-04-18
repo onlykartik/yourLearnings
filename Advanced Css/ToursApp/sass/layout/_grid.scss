@@ -12,13 +12,11 @@
     }
 
     @include clearfix;
-
+    
     // This will select all the elements starting with class name -> 'col' in the HTML
     [class^="col-"]{
         
         float: left;
-        
-
         &:not(:last-child){ // * The properties with in the parantisis is applied to all except last-child 
             margin-right: $gutter-horizontal;
 
@@ -26,7 +24,7 @@
     }
 
     .col-1-of-2{
-        float: left;
+        
         width: calc( (100% - #{$gutter-horizontal}) / 2 );
     }
 

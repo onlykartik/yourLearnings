@@ -1,0 +1,28 @@
+.navbar{
+    padding: 20px;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+nav ul{
+    list-style: none;
+}
+nav ul li{
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 5px;
+}
+a{
+    text-decoration-line: none;
+    color: black;
+}
+
+.active{
+    color: tomato;
+    font-weight: bold;
+}
